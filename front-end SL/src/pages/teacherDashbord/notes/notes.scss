@@ -1,0 +1,66 @@
+.notes{
+    height: 80vh;
+    padding: 40px;
+
+    .principal-row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        // text-align: center;
+        margin-bottom: 10px;
+
+        span{
+            width: 500px;
+            color: white;
+            font-size: 15px;
+            font-weight: bolder;
+        }
+    }
+
+    .simple-row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        // text-align: center;
+
+        span{
+            width: 500px;
+            color: white;
+            font-size: 12px;
+        }
+    }
+
+    hr{
+        width: 80%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .bloc-note{
+        height: 70vh;
+    }
+
+    .imprimer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #7777f6;
+        width: 100px;
+        margin-left: 78%;
+
+        img{
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        span{
+            color: #7777f6;
+            font-size: 12px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+    }
+}

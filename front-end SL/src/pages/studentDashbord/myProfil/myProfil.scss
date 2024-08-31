@@ -1,0 +1,185 @@
+.myProfil{
+    width: 100%;
+    margin-top: 20px;
+
+    .bloc-principal{
+        display: flex;
+        
+        .bloc-img{
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            // justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            
+            b{
+                color: white;
+                font-size: 14px;
+            }
+
+            .circle1{
+                width: 200px;
+                height: 180px;
+                background-color: rgba(255, 255, 255, 0.2);
+                border-radius: 100%;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .circle2{
+                    width: 160px;
+                    height: 140px;
+                    background-color: white;
+                    border-radius: 100%;    
+                }
+            }
+
+            p{
+                background-color: #7777f6;
+                padding: 10px;
+                padding-left: 25px ;
+                padding-right: 25px ;
+                border-radius: 40px;
+                font-size: 14px;
+                color: white;
+                width: 200px;
+                text-align: center;
+                font-weight: bolder;
+            }
+        
+        }
+
+        .bloc-info{
+            width: 60%;
+
+            h1{
+                color: rgba(255, 255, 255, 0.9);
+                font-size: 24px;
+            }
+
+            .input-info{
+                display: inline-block;
+                width: 280px;
+                margin-right: 40px;
+                margin-bottom: 20px;
+
+                span{
+                    display: block;
+                    font-size: 12px;
+                    color: #7777f6;
+                }
+
+                input{
+                    width: 95%;
+                    height: 35px;
+                    color: white;
+                    padding-left: 20px;
+                }
+            }
+
+            .large-input-info{
+                width: 620px;
+            }
+        }
+
+    }
+
+    .bloc-secondaire{
+        display: flex;
+        margin-top: 20px;
+
+        .bloc-chart{
+            width: 40%;
+
+            h2{
+                color: white;
+                margin-left: 30px;
+                font-size: 20px;
+            }
+
+            .chart-genreral{
+                margin-top: -30px;
+            }
+
+            .option{
+                display: flex;
+                font-size: 14px;
+                margin-left: 30px;
+                
+                .title{
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .dot{
+                        width: 10px;
+                        height: 10px;
+                        margin-right: 10px;
+                        border: 1px solid white;
+                    }
+                }
+
+                .value{
+                    color: white;
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .bloc-info{
+            width: 60%;
+
+            h1{
+                color: rgba(255, 255, 255, 0.9);
+                font-size: 30px;
+                word-spacing: 10px;
+            }
+
+            p{
+                color: rgba(255, 255, 255, 0.6);
+                width: 80%;
+                font-size: 14px;
+
+                span{
+                    color: #7777f6;
+                }
+            }
+
+            button{
+                background-color: #7777f6;
+                width: 200px;
+                height: 40px;
+                border: none;
+                border-radius: 20px;
+                color: white;
+                margin-top: 40px;
+                margin-left: 25%;
+                font-weight: bolder;
+            }
+        }
+
+        .displine{
+            margin-left: 10%;
+            color: white;
+            font-size: 13px;
+
+            span{
+                display: inline-block;
+                background-color: #ff000079;
+                padding: 5px;
+                border-radius: 100px;
+                width: 19px;
+                height: 19px;
+                text-align: center;
+                margin-right: 5px;
+                font-weight: bolder;
+                border: 2px solid white;
+                font-size: 11px;
+            }
+        }
+    }
+}

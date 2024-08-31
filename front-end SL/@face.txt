@@ -1,0 +1,71 @@
+rtsp://192.168.1.45:8080/h264_ulaw.sdp
+import Cookies from 'js-cookie';
+
+Cookies.get('idUser');
+Cookies.get('nom');
+Cookies.get('pass');
+Cookies.get('date');
+Cookies.get('email');
+Cookies.get('sexe');
+Cookies.get('type');
+Cookies.get('telephone');
+Cookies.get('status');
+
+Cookies.set('idUser', data.idUser , { expires: 7 }); //7 jours avant la suppression 
+Cookies.set('nom', data.nom , { expires: 7 });
+Cookies.set('pass', data.pass , { expires: 7 });
+Cookies.set('date', data.date , { expires: 7 });
+Cookies.set('email', data.email , { expires: 7 });
+Cookies.set('sexe', data.sexe , { expires: 7 });
+Cookies.set('type', data.type , { expires: 7 });
+Cookies.set('telephone', data.telephone , { expires: 7 });
+Cookies.set('status', data.status , { expires: 7 });
+
+Cookies.set('matricule', etudiant.matricule , { expires: 7 });
+Cookies.set('idClasse', etudiant.idClasse , { expires: 7 });
+Cookies.set('idScolarite', etudiant.idScolarite , { expires: 7 });
+Cookies.set('lettreMotivation', etudiant.lettreMotivation , { expires: 7 });
+Cookies.set('bourse', etudiant.bourse , { expires: 7 });
+Cookies.set('specialite', etudiant.specialite , { expires: 7 });
+Cookies.set('niveau', etudiant.niveau , { expires: 7 });
+Cookies.set('diplomeNature', etudiant.diplomeNature , { expires: 7 });
+Cookies.set('diplome', etudiant.diplome , { expires: 7 });
+Cookies.set('bulletin', etudiant.bulletin , { expires: 7 }); 
+Cookies.set('redoublant', etudiant.redoublant , { expires: 7 }); 
+
+Cookies.remove('nom');
+
+
+import { Link, useNavigate } from 'react-router-dom';
+const navigate = useNavigate();
+
+const annoncesResponse = await fetch(`http://192.168.118.18:3032/user/join/`, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        table1: "matiere",
+        table2: "cours",
+        cle1: "idMatiere",
+        cle2: "idMatiere",
+        valeur: `${Cookies.get('idClasse')}`
+    })
+});
+
+
+const profs = await Promise.all(coursData.map(async cour => {})
+
+
+const coursReponse = await fetch(`http://192.168.118.18:3032/cours/infoClasse/${Cookies.get('idClasse')}`, {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+});
+const coursData = await coursReponse.json();
+setCours(coursData);
+
+import React, { useState, useEffect } from 'react';
+
+<img  width={152} height={135} style={{marginLeft:4, marginTop:2, borderRadius:"100%", objectFit: "cover"}} src={`http://192.168.118.18:3032/user/file/${Cookies.get('matricule')}-profilePhoto.png`} /> 

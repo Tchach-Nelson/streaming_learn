@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload PDF File</title>
+  </head>
+
+  <body>
+    <h1>Upload PDF File</h1>
+    <input type="file" id="fileInput" />
+    <button onclick="uploadFile()">Upload</button>
+    <p id="status"></p>
+
+    <script>
+      function uploadFile() {
+        const fileInput = document.getElementById("fileInput");
+        const file = fileInput.files[0];
+
+        console.log(file);
+
+        if (!file) {
+          alert("Please select a file.");
+          return;
+        }
+
+        // Create a new File object with a modified name
+        const modifiedFile = new File(
+          [file],
+          `myName.${file.name.split(".").pop()}`,
+          { type: file.type }
+        );
+
+        const formData = new FormData();
+        formData.append("file", modifiedFile);
+
+        fetch("http://192.168.118.18:3032/etudiant/1/upload", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("File uploaded successfully:", data);
+            document.getElementById("status").textContent =
+              "File uploaded successfully";
+          })
+          .catch((error) => {
+            console.error(
+              "There was a problem with your fetch operation:",
+              error
+            );
+            document.getElementById("status").textContent =
+              "File upload failed";
+          });
+      }
+    </script>
+  </body>
+</html>

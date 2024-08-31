@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RTSP Camera Feed</title>
+  <script src="https://cdn.jsdelivr.net/npm/jsmpeg@1.1.0/dist/jsmpeg.min.js"></script>
+</head>
+<body>
+  <h1>RTSP Camera Feed</h1>
+  <canvas id="camera-feed"></canvas>
+
+  <script>
+    const cameraUrl = 'rtsp://192.168.96.48:8080/h264_ulaw.sdp';
+    const canvas = document.getElementById('camera-feed');
+
+    const player = new JSMpeg.Player(cameraUrl, {
+      canvas: canvas,
+      autoplay: true,
+      loop: true,
+      audio: false,
+      videoBufferSize: 2 * 1024 * 1024,
+      useWorker: true,
+      enableMemoryCache: true
+    });
+  </script>
+</body>
+</html>

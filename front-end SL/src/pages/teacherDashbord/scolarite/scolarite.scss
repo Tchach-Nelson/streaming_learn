@@ -1,0 +1,99 @@
+.scolarite{
+    height: 80vh;
+    padding: 40px;
+
+    span{
+        color: white;
+        font-size: 12px;
+    }
+
+    .value{
+        color: #7777f6;
+        margin-left: 10px;
+    }
+
+    .infoEtu{
+        display: flex;
+
+        .bloc1{
+            width: 50%;
+        }
+
+        .bloc2{
+            width: 50%;
+        }
+
+    }
+
+    .versement{
+        display: flex;
+        margin-top: 10px;
+
+        .bloc1{
+            width: 95%;
+        }
+
+        .bloc2{
+            width: 30%;
+        }
+
+    }
+
+    .historique{
+        margin-top: 50px;
+        height: 300px;
+        
+        .principal-row{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            // text-align: center;
+            margin-bottom: 10px;
+
+            span{
+                width: 500px;
+            }
+        }
+
+        .simple-row{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            // text-align: center;
+
+            span{
+                width: 500px;
+            }
+        }
+    }
+
+    .recap{
+        display: flex;
+        
+        .info{
+            width: 80%;
+        }
+        .imprimer{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            color: #7777f6;
+
+            img{
+                width: 30px;
+                height: 30px;
+                margin-top: 20px;
+                cursor: pointer;
+            }
+
+            span{
+                color: #7777f6;
+                font-size: 12px;
+                margin-top: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+
+}
