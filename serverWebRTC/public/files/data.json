@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "date": "12-01-2024",
+      "cours": [
+        {
+          "prof": "azer",
+          "cours": "anglais",
+          "classe": "GSI 1",
+          "uuid": "id"
+        }
+      ]
+    },
+    {
+      "date": "01-06-2024",
+      "cours": [
+        {
+          "prof": "Maka",
+          "cours": "phIlo",
+          "classe": "GSI 1",
+          "uuid": "431243a6-8de5-439f-a24b-2ab2f5adb1d3"
+        }
+      ]
+    },
+    {
+      "date": "02-06-2024",
+      "cours": [
+        {
+          "prof": "Maka",
+          "cours": "phIlo",
+          "classe": "GSI 1",
+          "uuid": "d045e865-1402-45bb-8499-1896e6e3379f"
+        }
+      ]
+    },
+    {
+      "date": "01-07-2024",
+      "cours": [
+        {
+          "prof": "Maka",
+          "cours": "phIlo",
+          "classe": "GSI 1",
+          "uuid": "f3a241df-0967-4e72-9172-cab8f9f5a681"
+        }
+      ]
+    }
+  ]
+}

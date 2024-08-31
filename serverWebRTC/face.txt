@@ -1,0 +1,15 @@
+demarre 
+
+npm run devStart
+peerjs --port 3030
+
+
+https://unpkg.com/browse/peerjs@1.2.0/dist/
+
+{
+    "prof": "Soul evan's",
+    "cours": "anglais",
+    "classe": "GSI 1"
+}
+
+http://192.168.118.18:3031
