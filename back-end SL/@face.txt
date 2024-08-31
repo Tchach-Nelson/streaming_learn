@@ -1,0 +1,186 @@
+>>>ajouter un module           :::::  --no-spec
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+nest generate module scolarite       ::::: sans fichier de test
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+>>>ajouter un controller
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+nest generate controller scolarite
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+>>>ajouter un service
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+nest generate service scolarite
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+//users
+{
+  "idUser": 1,
+  "nom": "string",
+  "pass": "string",
+  "date": "string",
+  "email": "string",
+  "sexe": "string",
+  "type": "string",
+  "telephone": 654231990,
+  "status": 1
+}
+
+//supprimer les contraintes de clé etrangère pour puvoir auto incre.. (a evité)
+FK_Generalisation_5 == nom de la contrainte
+
+ALTER TABLE streaminglearn.disciplineetudiant
+DROP FOREIGN KEY FK_disciplineEtudiant;  
+
+//remettre a zero
+ALTER TABLE table_name AUTO_INCREMENT = 1;
+
+//admin
+{
+  "idAmin": 0,
+  "idUser": 1,
+  "privilege": "string",
+  "poste": "string"
+}
+
+//prof 
+{
+  "idProf": 0,
+  "idUser": 1,
+  "specialite": "string",
+  "poste": "string",
+  "salaire": 10000
+}
+
+//etudiant
+{
+  "matricule":0,
+  "idUser": 1,
+  "nom": "string",
+  "pass": "string",
+  "date": "string",
+  "email": "string",
+  "sexe": "string",
+  "type": "string",
+  "telephone": 654231990,
+  "status": 1,
+  "idClasse": 1,
+  "idScolarite": 1,
+  "lettreMotivation": "lien vers la lettreMotivation",
+  "bourse": "lien vers la bourse",
+  "specialite": "spe",
+  "niveau": 1,
+  "diplomeNature": "litteraire",
+  "diplome": "lien vers le diplome",
+  "bulletin": "lien vers le bulletin",
+  "redoublant": "oui"
+}
+
+//login
+{
+  "nom": "string",
+  "pass": "string"
+}
+
+
+//message
+{
+  "idMessage":0,
+  "idCours":0,
+  "contenu": "Message important",
+  "heure": "22h02",
+  "date": "11 avril 2024",
+  "type": "string",
+  "idUser": 1,
+  "idClasse":0
+}
+
+
+//classe
+{
+  "idClasse":0,
+  "nomClasse":"GSI 1",
+  "effectif": 50,
+  "chefId": 1,
+  "sousChefId": 2
+}
+
+//cours
+{
+  "idCours":0,
+  "idProf":0,
+  "idMatiere": 0,
+  "date": "10 juin 2024",
+  "uuid": "kcvs454",
+  "idClasse": 2
+}
+
+//discipline 
+{
+  "idDiscipline ":0,
+  "type":0,
+  "valeur": "Blame",
+  "motif": "insurbordination"
+}
+
+//matiere 
+{
+  "idMatiere ":0,
+  "nom":"Anglais",
+  "credit": 4,
+  "semestre": "S1",
+  "note": 27,
+  "dateNote": "17 juin 2022",
+  "decision": "Validée"
+}
+
+//join 
+{
+  "table1":"cours",
+  "table2":"participation",
+  "cle1": "idCours",
+  "cle2": "idCours",
+  "valeur": "4"
+}
+
+//allinfoProf
+SELECT m.idMessage, m.contenu, m.heure, m.date, u.nom , c.nomClasse as idClasse
+FROM `message` m
+INNER JOIN utilisateur u ON u.idUser = m.idMessage
+INNER JOIN classe c ON c.idClasse = m.idClasse where m.type = 'annonce';
+    "idProf": 0,
+    "nom": "azer max 15",
+    "date": "2024-07-15",
+    "email": "maxazer184@gmail.com",
+    "sexe": "masculin",
+    "specialite": "langue",
+    "telephone": 654231990,
+    "poste": "enseignant",
+    "salaire": 200000
+}
+
+
+//utilisateur etudiant :
+SELECT *        // u.nom
+FROM utilisateur u
+INNER JOIN etudiant e ON u.idUser = e.idUser;
+
+//nom et bulettin d'un etudiant
+SELECT u.nom,e.bulletin
+FROM utilisateur u
+INNER JOIN etudiant e ON u.idUser = e.idUser AND u.idUser = 2;
+
+//jointure
+SELECT *       
+FROM programme p
+INNER JOIN programmematiere pm ON p.idProgramme = pm.idProgramme
+Inner JOIN matiere m on m.idMatiere = pm.idMatiere;
+
+
+
+SELECT m.idMessage, m.contenu, m.heure, m.date, u.nom , c.nomClasse as idClasse
+FROM `message` m
+INNER JOIN utilisateur u ON u.idUser = m.idMessage
+INNER JOIN classe c ON c.idClasse = m.idClasse where m.type = 'annonce';
